@@ -1,0 +1,279 @@
+/* Variables */
+:root {
+  --gradient-primary: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  --gradient-secondary: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+  --gradient-success: linear-gradient(135deg, #43E97B 0%, #38F9D7 100%);
+  --gradient-danger: linear-gradient(135deg, #FF0844 0%, #FFB199 100%);
+  --gradient-card: linear-gradient(135deg, #E0C3FC 0%, #8EC5FC 100%);
+  --shadow-default: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Main Container Styles */
+.user-list {
+  margin-bottom: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, #F5F7FA 0%, #E4E8EB 100%);
+  font-family: 'Arial', sans-serif;
+  
+  min-height: 60vh;
+}
+
+/* Header Styles */
+.user-list h2 {
+  text-align: center;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: underline blue;
+}
+
+/* Table Styles */
+.user-list table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow-default);
+  transition: all 0.3s ease;
+}
+
+.user-list table:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.user-list th {
+  background: var(--gradient-primary);
+  text-align: center;
+  padding: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.user-list td {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 15px 20px;
+  text-align: left;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.user-list tr:hover td {
+  background: rgba(107, 115, 255, 0.05);
+  transform: scale(1.01);
+}
+
+/* User Details Card */
+.user-details {
+  background: var(--gradient-card);
+  border: none;
+  border-radius: 15px;
+  padding: 20px 25px;
+  box-shadow: var(--shadow-default);
+  transition: all 0.3s ease;
+  width: 95%;
+  margin: 15px auto;
+  color: #444;
+}
+
+.user-details:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: var(--shadow-hover);
+  background: var(--gradient-secondary);
+  color: white;
+}
+
+/* Action Buttons */
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-default);
+}
+
+.edit-btn {
+  background: var(--gradient-success);
+  color: white;
+  margin-right: 15px;
+}
+
+.edit-btn:hover {
+  transform: translateY(-5px) rotate(360deg);
+  box-shadow: 0 5px 15px rgba(67, 233, 123, 0.4);
+}
+
+.delete-btn {
+  background: var(--gradient-danger);
+  color: white;
+}
+
+.delete-btn:hover {
+  transform: translateY(-5px) rotate(360deg);
+  box-shadow: 0 5px 15px rgba(255, 8, 68, 0.4);
+}
+
+/* Add New User Button */
+.add-user-btn {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--shadow-default);
+  transition: all 0.3s ease;
+}
+
+.add-user-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Responsive Design */
+@media screen and  (min-width: 580px) and (max-width: 768px){
+  .user-list {
+    padding: 10px;
+   
+  }
+  .user-list tr{
+    width: 100%;
+  }
+  .user-list table {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .user-list th, .user-list td {
+    padding: 10px;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+  .user-details {
+    width: 100%;
+    padding: 10px;
+  }
+  .action-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .user-list {
+    width: 100%;
+    padding: 0 10px; /* Reduced padding to fit smaller screens */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+  .user-list table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-radius: 10px;
+    width: 100%;
+  }
+  .user-list tr{
+    width: 100%;
+  }
+  .user-list th,
+  .user-list td {
+    padding: 12px;
+    font-size: 0.9rem;
+    width: 100%;
+    
+  }
+
+  .user-details {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .action-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .user-list {
+    padding: 10px;
+    
+  }
+
+  .user-list h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .user-details {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .action-btn {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Card entrance animation */
+.user-details {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Additional Utility Classes */
+.text-center { text-align: center; }
+.d-flex { display: flex; }
+.justify-between { justify-content: space-between; }
+.align-center { align-items: center; }
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

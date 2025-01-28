@@ -1,0 +1,155 @@
+.user-form {
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 450px;
+  margin: 30px auto;
+  font-family: 'Inter', sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Smooth fade-in effect for the form */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form header with stylish typography */
+.user-form h2 {
+  text-align: center;
+  color: #4a4a4a;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  background: linear-gradient(to right, #6a82fb, #fc5c7d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* Input container styling */
+.input-container {
+  position: relative;
+  margin-bottom: 30px;
+  padding-right: 35px;
+}
+
+/* Style for the input field */
+.user-form input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  color: #333;
+  
+}
+
+/* Focus effect for inputs */
+.user-form input:focus {
+  border-color: #6a82fb;
+  outline: none;
+  box-shadow: 0 4px 10px rgba(106, 130, 251, 0.2);
+}
+
+/* Floating label style */
+.user-form label {
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  font-size: 1rem;
+  color: #aaa;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  background-color: white;
+  padding: 0 6px;
+}
+
+/* When the input has a value or is focused, label floats */
+.user-form input:focus + label,
+.user-form input:not(:placeholder-shown) + label {
+  top: -8px;
+  left: 16px;
+  font-size: 0.85rem;
+  color: #6a82fb;
+  background: white;
+  padding: 0 6px;
+}
+
+/* Button container with aligned actions */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+/* Button base styles */
+.save-btn,
+.cancel-btn {
+  flex: 1;
+  padding: 14px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+  border: none;
+}
+
+/* Save button gradient with hover effects */
+.save-btn {
+  background: linear-gradient(135deg, #6a82fb, #fc5c7d);
+  color: white;
+  box-shadow: 0 6px 12px rgba(106, 130, 251, 0.4);
+}
+
+.save-btn:hover {
+  background: linear-gradient(135deg, #5d76e5, #f94761);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(106, 130, 251, 0.5);
+}
+
+/* Cancel button with subtle gradient */
+.cancel-btn {
+  background: linear-gradient(135deg, #f44336, #e57373);
+  color: white;
+  box-shadow: 0 6px 12px rgba(244, 67, 54, 0.4);
+}
+
+.cancel-btn:hover {
+  background: linear-gradient(135deg, #e53935, #ef5350);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(244, 67, 54, 0.5);
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 480px) {
+  .user-form {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .save-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+}

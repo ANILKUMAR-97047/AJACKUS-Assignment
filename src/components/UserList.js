@@ -21,7 +21,7 @@ const UserList = ({ users, onEditUser, onDeleteUser }) => (
               <td style={{textAlign:"center"}}>{user.customId || user.id}</td>
               <td>{user.name}</td>
               <td>{user.email}</td>
-              <td style={{display:"flex", justifyContent:"center"}}>
+              <td style={{display:"flex", justifyContent:"center", width:"90%"}}>
                 <button onClick={() => onEditUser(user)} className="edit-btn action-btn">
                   <FiEdit/>
                 </button>

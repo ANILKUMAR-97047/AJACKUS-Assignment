@@ -15,8 +15,9 @@
   padding: 20px;
   background: linear-gradient(135deg, #F5F7FA 0%, #E4E8EB 100%);
   font-family: 'Arial', sans-serif;
-  
   min-height: 60vh;
+  max-width: 100%; /* Ensure container doesn't exceed viewport width */
+  overflow-x: hidden; /* Hide horizontal overflow at container level */
 }
 
 /* Header Styles */
@@ -34,9 +35,19 @@
   text-decoration: underline blue;
 }
 
+/* Table Container */
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  margin-bottom: 20px;
+  border-radius: 15px; /* Match table border radius */
+}
+
 /* Table Styles */
 .user-list table {
   width: 100%;
+  min-width: 600px; /* Minimum width to prevent squishing */
   border-collapse: separate;
   border-spacing: 0;
   background: #fff;
@@ -152,61 +163,30 @@
 }
 
 /* Responsive Design */
-@media screen and  (min-width: 580px) and (max-width: 768px){
-  .user-list {
-    padding: 10px;
-   
-  }
-  .user-list tr{
-    width: 100%;
-  }
-  .user-list table {
-    width: 100%;
-    overflow-x: auto;
-  }
-  .user-list th, .user-list td {
-    padding: 10px;
-    font-size: 0.9rem;
-    width: 100%;
-  }
-  .user-details {
-    width: 100%;
-    padding: 10px;
-  }
-  .action-btn {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-
 @media screen and (max-width: 768px) {
   .user-list {
-    width: 100%;
-    padding: 0 10px; /* Reduced padding to fit smaller screens */
-    overflow-x: hidden; /* Prevent horizontal overflow */
+    padding: 10px;
   }
+
+  .table-container {
+    margin: 0 -10px; /* Negative margin to allow full-width scrolling */
+    padding: 0 10px; /* Padding to maintain spacing */
+  }
+  
   .user-list table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-    border-radius: 10px;
-    width: 100%;
+    margin: 0; /* Remove margin to prevent double spacing */
   }
-  .user-list tr{
-    width: 100%;
-  }
+  
   .user-list th,
   .user-list td {
     padding: 12px;
     font-size: 0.9rem;
-    width: 100%;
-    
+    white-space: nowrap; /* Prevent text wrapping */
   }
 
-  .user-details {
-    width: 100%;
-    padding: 15px;
+  .user-list td:last-child {
+    width: 120px;
+    min-width: 120px;
   }
 
   .action-btn {
@@ -217,8 +197,7 @@
 
 @media screen and (max-width: 425px) {
   .user-list {
-    padding: 10px;
-    
+    padding: 5px;
   }
 
   .user-list h2 {
@@ -226,9 +205,10 @@
     margin-bottom: 15px;
   }
 
-  .user-details {
-    padding: 12px;
-    border-radius: 10px;
+  .user-list th,
+  .user-list td {
+    padding: 8px;
+    font-size: 0.85rem;
   }
 
   .action-btn {
@@ -266,7 +246,7 @@
   animation: fadeIn 0.6s ease-out;
 }
 
-/* Additional Utility Classes */
+/* Utility Classes */
 .text-center { text-align: center; }
 .d-flex { display: flex; }
 .justify-between { justify-content: space-between; }
